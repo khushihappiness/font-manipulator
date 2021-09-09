@@ -1,3 +1,6 @@
+noseX=0;
+noseY=0;
+
 function setup()
 {
 video= createCapture(VIDEO);
@@ -13,6 +16,9 @@ poseNet.on('pose',gotPoses);
 function draw()
 {
     background('#F37694')
+    square(noseX, noseY, 100);//usually used to draw a square
+    fill('#6CF1D1');
+    stroke('#090909');
 }
 
 function modelLoaded()
@@ -24,6 +30,10 @@ function gotPoses(results)
 {
     if(results.length > 0)
     {
+    
         console.log(results)
+        noseX=results[0].pose.nose.x;
+        noseY=results[0].pose.nose.y;
+        console.log("noseX=" + noseX + "noseY=" + noseY);
     }
 }
