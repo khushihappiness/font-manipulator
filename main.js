@@ -19,7 +19,8 @@ poseNet.on('pose',gotPoses);
 function draw()
 {
     background('#F37694')
-    text( "Khushi" ,noseX, noseY, difference);//usually used to draw a text
+    text( "Khushi" ,noseX, noseY);//usually used to draw a text
+    textSize(difference)
     fill('#6CF1D1');
     stroke('#090909');
 }
